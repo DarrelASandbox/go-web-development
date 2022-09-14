@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>functions</title>
+  </head>
+  <body>
+
+    <span>Given number: {{.Num}}</span>
+    <span>Double: {{.Num | fdbl}}</span>
+    <span>Double then square: {{.Num | fdbl | fsq}}</span>
+    <span>Double, square then square root: {{.Num | fdbl | fsq | fsqrt}}</span>
+
+    <span>{{ .Time | fdateMDY}}</span>
+  </body>
+</html>

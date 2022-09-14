@@ -6,8 +6,9 @@ import (
 	"text/template"
 )
 
+// string-to-html
 func main() {
-	tpl, err := template.ParseFiles("tpl.gohtml")
+	tpl, err := template.ParseFiles("templates/tpl.gohtml")
 
 	if err != nil {
 		log.Fatalln(err)
@@ -18,3 +19,6 @@ func main() {
 		log.Fatalln(err)
 	}
 }
+
+// Do not use the above code in production
+// Can have efficiency improvements
