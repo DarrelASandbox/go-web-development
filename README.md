@@ -13,6 +13,7 @@
         <li><a href="#03-server-tcp">03-server-tcp</a>
         <li><a href="#04-server-net-http">04-server-net-http</a>
         <li><a href="#05-server-servemux">05-server-servemux</a>
+        <li><a href="#06-server-serve-files">06-server-serve-files</a>
       </ol>
     </li>
   </ol>
@@ -359,7 +360,22 @@ type ServeMux
 - [GO package - julienschmidt/httprouter](https://pkg.go.dev/github.com/julienschmidt/httprouter)
   - `go get "github.com/julienschmidt/httprouter"`
 
+&nbsp;
+
 ---
+
+&nbsp;
+
+### 06-server-serve-files
+
+- [http.ServeContent](https://pkg.go.dev/net/http#ServeContent)
+  - `func ServeContent(w ResponseWriter, req *Request, name string, modtime time.Time, content io.ReadSeeker)`
+- [http.ServeFile](https://pkg.go.dev/net/http#ServeFile)
+  - `func ServeFile(w ResponseWriter, r *Request, name string)`
+- [http.FileServer](https://pkg.go.dev/net/http#FileServer)
+  - `func FileServer(root FileSystem) Handler`
+- [http.StripPrefix](https://pkg.go.dev/net/http#StripPrefix)
+  - `func StripPrefix(prefix string, h Handler) Handler`
 
 &nbsp;
 
