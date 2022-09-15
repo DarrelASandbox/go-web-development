@@ -16,6 +16,7 @@
         <li><a href="#06-server-serve-files">06-server-serve-files</a>
       </ol>
     </li>
+    <li><a href="#creating-state">Creating State</a></li>
   </ol>
 </details>
 
@@ -376,6 +377,39 @@ type ServeMux
   - `func FileServer(root FileSystem) Handler`
 - [http.StripPrefix](https://pkg.go.dev/net/http#StripPrefix)
   - `func StripPrefix(prefix string, h Handler) Handler`
+
+&nbsp;
+
+---
+
+&nbsp;
+
+## Creating State
+
+- [rfc7231](https://datatracker.ietf.org/doc/html/rfc7231)
+
+&nbsp;
+
+---
+
+&nbsp;
+
+> **Andy:** when you have `.Close()`?
+>
+> I see you have `defer f.Close()` and `defer dst.Close()` in [this file](https://github.com/GoesToEleven/golang-web-dev/blob/master/027_passing-data/05_form-file/02_store/main.go), I am wondering, how do I know I need to use a `.Close()`, because if I didn't close it, it's not the good practice. but how can I remember to have `.Close()` and write "safe" code? Or is it just all from experience? thanks
+
+> **Todd:** so if you look at [this](https://godoc.org/net/http#Request.FormFile) and then look at [this](https://godoc.org/mime/multipart#File). You see this
+
+```Go
+    type File interface {
+        io.Reader
+        io.ReaderAt
+        io.Seeker
+        io.Closer
+    }
+```
+
+> And when something has a method "Closer" that means you probably will want to call it, eg, close it. You can also see that here, as another [example](https://godoc.org/os#File). One of the methods on a `os.File` is `Close()`. Plus, just think about whether or not this is a resource that is being opened which might need to be closed: a file, a connection, etc.
 
 &nbsp;
 
