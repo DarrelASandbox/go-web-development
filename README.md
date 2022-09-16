@@ -17,6 +17,7 @@
       </ol>
     </li>
     <li><a href="#creating-state">Creating State</a></li>
+    <li><a href="#creating-sessions">Creating Sessions</a></li>
   </ol>
 </details>
 
@@ -410,6 +411,14 @@ type ServeMux
 ```
 
 > And when something has a method "Closer" that means you probably will want to call it, eg, close it. You can also see that here, as another [example](https://godoc.org/os#File). One of the methods on a `os.File` is `Close()`. Plus, just think about whether or not this is a resource that is being opened which might need to be closed: a file, a connection, etc.
+
+&nbsp;
+
+---
+
+&nbsp;
+
+## Creating Sessions
 
 &nbsp;
 
