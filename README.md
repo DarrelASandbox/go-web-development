@@ -19,6 +19,7 @@
     <li><a href="#creating-state">Creating State</a></li>
     <li><a href="#creating-sessions">Creating Sessions</a></li>
     <li><a href="#mysql">MySQL</a></li>
+    <li><a href="#aws">AWS</a></li>
   </ol>
 </details>
 
@@ -446,6 +447,30 @@ type ServeMux
 3. create mysql db on aws
 4. connect workbench to rds mysql db
 5. [Easy tutorial for connecting remotely to AWS RDS database using MYSQL Workbench](https://www.youtube.com/watch?v=k68Y-XYapEI)
+
+&nbsp;
+
+---
+
+&nbsp;
+
+## AWS
+
+- **Create EC2 security groups:**
+  - A security group acts as a virtual firewall that controls the traffic for one or more instances.
+  - When you launch an instance, you associate one or more security groups with the instance. You add rules to each security group that allow traffic to or from its associated instances.
+- **Create an ELB load balancer:**
+  - Load balancing improves the distribution of workloads across multiple computing resources.
+  - Elastic Load Balancing automatically distributes incoming application traffic across multiple Amazon EC2 instances. It enables you to achieve fault tolerance in your applications, seamlessly providing the required amount of load balancing capacity needed to route application traffic.
+  - Elastic Load Balancing offers two types of load balancers that both feature high availability, automatic scaling, and robust security.
+  - These include the Classic Load Balancer that routes traffic based on either application or network level information, and the Application Load Balancer that routes traffic based on advanced application level information that includes the content of the request.
+  - The Classic Load Balancer is ideal for simple load balancing of traffic across multiple EC2 instances, while the Application Load Balancer is ideal for applications needing advanced routing capabilities, microservices, and container-base architectures.
+  - Application Load Balancer offers ability to route traffic to multiple services or load balance across multiple ports on the same EC2 instance.
+- **Implementing the load balancer:**
+  - We will create an image of our web server.
+  - We will then create a new instance of a web server from our image.
+  - We will make sure both of our web servers are added to the target group being used by the load balancer.
+  - We will then test that the load balancer is working correctly.
 
 &nbsp;
 
