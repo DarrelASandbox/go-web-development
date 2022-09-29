@@ -1,4 +1,16 @@
 go 1.19
 
+use ./01-prereq
+use ./02-templating
+use ./03-server-tcp
+use ./04-server-net-http
+use ./05-server-servemux
+use ./06-server-serve-files
+use ./07-creating-state
+use ./08-creating-sessions
+use ./09-mysql
+use ./10-photo-blog
+use ./11-web-dev-toolkit
 use ./12-mongodb
 use ./13-postgres
+use ./14-code-organization
