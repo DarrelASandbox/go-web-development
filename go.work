@@ -1,3 +1,4 @@
 go 1.19
 
 use ./12-mongodb
+use ./13-postgres
